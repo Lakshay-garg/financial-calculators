@@ -1,53 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
 body {
-  font-family: Montserrat, sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
+/* Calculator container */
 .calculator {
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  margin-top: 2%;
-  margin-left: 25%;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 2% 15%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
+/* Each investment container */
 .investment-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
 }
 
+/* Heading section with label and input */
 .investment-container .heading {
     display: flex;
-    flex-direction: row;
-    font-size: 14px;
-    font-weight: bold;
-    color: #4a4a4a;
+    align-items: center;
+    width: 100%;
 }
 
+/* Label styling */
 .investment-container .heading .label {
     font-size: 16px;
     font-weight: 500;
     color: #4a4a4a;
-    margin: auto 15px;
+    margin-right: auto; /* Pushes label to the left */
 }
 
+/* Input styling to align on the right */
 .investment-container .heading .input {
-    width: 100px;
-    margin-left: auto;
-    padding: 6px;
-    font-size: 14px;
+    margin-left: auto; /* Pushes input to the right */
+}
+
+.investment-container .heading .input i{
 }
 
 
-.container .heading{
+.investment-container .heading .input input[type="number"] {
+    width: 100px;
+    padding: 6px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    font-size: 14px;
+    outline: none;
+    text-align: right;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Slider section */
+.slider-range {
     display: flex;
-    font-size: 12px;
-    font-weight: bold;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Slider styling */
+.calculator-slider-range .slider {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    transition: background 0.2s ease;
+}
+
+.calculator-slider-range .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007BFF;
+    cursor: pointer;
+}
+
+.calculator-slider-range .slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007BFF;
+    cursor: pointer;
+}
+
+/* Display values on either side of the slider */
+.values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #4a4a4a;
 }

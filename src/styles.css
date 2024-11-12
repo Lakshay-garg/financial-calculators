@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+.calculator {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 25%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.investment-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.investment-container .heading {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.investment-container .heading .label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin: auto 15px;
+}
+
+.investment-container .heading .input {
+    width: 100px;
+    margin-left: auto;
+    padding: 6px;
+    font-size: 14px;
+}
+
+
+.container .heading{
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+}

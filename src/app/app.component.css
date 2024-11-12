@@ -1,0 +1,19 @@
+.heading{
+    text-align: center;
+}
+
+.navbar {
+  display: flex; /* Use flexbox for easy horizontal alignment */
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  width: fit-content;
+  border: 2px solid red;
+  margin: 0 10px;
+  padding: 12px 6px;
+  border-radius:40%;
+  color: black;
+}

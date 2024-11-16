@@ -4,6 +4,7 @@ import { SipCalculatorComponent } from './sip-calculator/sip-calculator.componen
 import { LumpsumCalculatorComponent } from './lumpsum-calculator/lumpsum-calculator.component';
 
 const routes: Routes = [
+  {path:'',redirectTo:'/sip-calculator',pathMatch:'full'},
   {path:'sip-calculator',component:SipCalculatorComponent},
   {path:'lumpsum-calculator',component:LumpsumCalculatorComponent}
 ];

@@ -1,1 +1,85 @@
-<p>lumpsum-calculator works!</p>
+
+<div class="financial">
+    <div>
+        <h2>SIP Calculator</h2>
+    </div>
+    <div class="full-calculator">
+        <div class="calculator">
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Monthly Investment</p>
+                    <div class="input">
+                        <i class="fas fa-rupee-sign" ></i>
+                        <input style="padding-right: 0;" type="number" [(ngModel)]="lumpsumInvestment" (ngModelChange)="changeMonthlyInvestmentValue($event); calculator()">
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="100" max="2000000" value="25000" class="slider" id="myRange" [(ngModel)]="lumpsumInvestment" (ngModelChange)="changeMonthlyInvestmentValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>100</span>
+                        <span>20,00,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Expected return rate (p.a)</p>
+                    <div class="input">
+                        <input type="number" [(ngModel)]="expectedReturnRate" (ngModelChange)="changeExpectedReturnValue($event); calculator()">
+                        <i class="percent">%</i>
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="1" max="30" value="20" class="slider" id="myRange" [(ngModel)]="expectedReturnRate" (ngModelChange)="changeExpectedReturnValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>1%</span>
+                        <span>30%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Time period</p>
+                    <div class="input">
+                        <input type="number" [(ngModel)]="timePeriod" (ngModelChange)="changeTimePeriodValue($event); calculator()">
+                        <i class="percent">Yr</i>
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="1" max="30" value="20" class="slider" id="myRange" [(ngModel)]="timePeriod" (ngModelChange)="changeTimePeriodValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>1 Yr</span>
+                        <span>30 Yr</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graph">
+            <div class="graph-diagram">
+                <canvas #myChart></canvas>
+            </div>
+            <div class="investment-summary">
+                <div class="summary-item">
+                  <span class="label">Invested amount:</span>
+                  <span class="value">₹{{this.investedAmount}}</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Estimated returns:</span>
+                  <span class="value">₹{{this.expectedReturns}}</span>
+                </div>
+                <div class="summary-item total-value">
+                  <span class="label">Total value:</span>
+                  <span class="value">₹{{totalReturnsOnMaturity}}</span>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+

@@ -39,13 +39,6 @@ export class SipCalculatorComponent implements AfterViewInit, OnInit {
             ],
           }]
         },
-        options: {
-          plugins: {
-            tooltip: {
-              enabled: false  // Disable tooltips
-            }
-          },
-        }
       });
     }
   }
@@ -82,7 +75,7 @@ export class SipCalculatorComponent implements AfterViewInit, OnInit {
     this.totalReturnsOnMaturity = Math.round(this.totalReturnsOnMaturity).toLocaleString('en-IN');
 
     
-
+    this.updateChart()
   }
 
   updateChart() {

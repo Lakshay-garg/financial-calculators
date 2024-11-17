@@ -1,0 +1,85 @@
+
+<div class="financial">
+    <div>
+        <h2>SWP Calculator</h2>
+    </div>
+    <div class="full-calculator">
+        <div class="calculator">
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Current Age</p>
+                    <div class="input">
+                        <i class="fas fa-rupee-sign" ></i>
+                        <input style="padding-right: 0;" type="number" [(ngModel)]="currentAge" (ngModelChange)="changeCurrentAgeValue($event); calculator()">
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="18" max="60" value="25" step="1" class="slider" id="myRange" [(ngModel)]="currentAge" (ngModelChange)="changeCurrentAgeValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>18</span>
+                        <span>60</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Expected return rate (p.a)</p>
+                    <div class="input">
+                        <input type="number" [(ngModel)]="annualReturnRate" (ngModelChange)="changeExpectedReturnValue($event); calculator()">
+                        <i class="percent">%</i>
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="1" max="15" value="10" step="1" class="slider" id="myRange" [(ngModel)]="annualReturnRate" (ngModelChange)="changeExpectedReturnValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>1%</span>
+                        <span>15%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Investment per month</p>
+                    <div class="input">
+                        <i class="fas fa-rupee-sign" ></i>
+                        <input style="padding-right: 0;" type="number" [(ngModel)]="monthlyInvestment" (ngModelChange)="changeMonthlyInvestmentValue($event); calculator()">
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="500" max="150000" value="25000" step="500" class="slider" id="myRange" [(ngModel)]="monthlyInvestment" (ngModelChange)="changeMonthlyInvestmentValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>500</span>
+                        <span>1,50,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graph">
+            <div class="graph-diagram">
+                <canvas #myChart></canvas>
+            </div>
+            <div class="investment-summary">
+                <div class="summary-item">
+                  <span class="label">Invested Amount:</span>
+                  <span class="value">₹{{totalInvestment}}</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Interest Earned:</span>
+                  <span class="value">₹{{interestEarned}}</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Maturity Amount:</span>
+                  <span class="value">₹{{totalCorpus}}</span>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+

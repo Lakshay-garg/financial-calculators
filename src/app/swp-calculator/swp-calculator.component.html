@@ -1,0 +1,103 @@
+
+<div class="financial">
+    <div>
+        <h2>SWP Calculator</h2>
+    </div>
+    <div class="full-calculator">
+        <div class="calculator">
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Total Investment</p>
+                    <div class="input">
+                        <i class="fas fa-rupee-sign" ></i>
+                        <input style="padding-right: 0;" type="number" [(ngModel)]="totalInvestment" (ngModelChange)="changeTotalInvestmentValue($event); calculator()">
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="10000" max="100000000" value="25000" class="slider" id="myRange" [(ngModel)]="totalInvestment" (ngModelChange)="changeTotalInvestmentValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>10000</span>
+                        <span>10,00,00,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Withdrawal per month</p>
+                    <div class="input">
+                        <i class="fas fa-rupee-sign" ></i>
+                        <input style="padding-right: 0;" type="number" [(ngModel)]="monthyWithdrawal" (ngModelChange)="changeMonthlyWithdrawnValue($event); calculator()">
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="500" max="1000000" value="25000" class="slider" id="myRange" [(ngModel)]="monthyWithdrawal" (ngModelChange)="changeMonthlyWithdrawnValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>500</span>
+                        <span>10,00,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Expected return rate (p.a)</p>
+                    <div class="input">
+                        <input type="number" [(ngModel)]="expectedReturnRate" (ngModelChange)="changeExpectedReturnValue($event); calculator()">
+                        <i class="percent">%</i>
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="1" max="30" value="20" class="slider" id="myRange" [(ngModel)]="expectedReturnRate" (ngModelChange)="changeExpectedReturnValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>1%</span>
+                        <span>30%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-container">
+                <div class="heading">
+                    <p class="label">Time period</p>
+                    <div class="input">
+                        <input type="number" [(ngModel)]="timePeriod" (ngModelChange)="changeTimePeriodValue($event); calculator()">
+                        <i class="percent">Yr</i>
+                    </div>
+                </div>
+                <div class="slider-range">
+                    <div class="calculator-slider-range">
+                        <input type="range" min="1" max="30" value="20" class="slider" id="myRange" [(ngModel)]="timePeriod" (ngModelChange)="changeTimePeriodValue($event); calculator()">
+                    </div>
+                    <div class="values">
+                        <span>1 Yr</span>
+                        <span>30 Yr</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graph">
+            <div class="graph-diagram">
+                <canvas #myChart></canvas>
+            </div>
+            <div class="investment-summary">
+                <div class="summary-item">
+                  <span class="label">Invested amount:</span>
+                  <span class="value">₹{{investedAmount}}</span>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Total Withdrawal:</span>
+                  <span class="value">₹{{totalWithdrawn}}</span>
+                </div>
+                <div class="summary-item total-value">
+                  <span class="label">Final value:</span>
+                  <span class="value">₹{{remainingInvestment}}</span>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+

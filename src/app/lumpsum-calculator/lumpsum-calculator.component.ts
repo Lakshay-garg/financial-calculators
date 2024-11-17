@@ -40,13 +40,6 @@ export class LumpsumCalculatorComponent implements AfterViewInit{
             ],
           }]
         },
-        options: {
-          plugins: {
-            tooltip: {
-              enabled: false  // Disable tooltips
-            }
-          },
-        }
       });
     }
   }
@@ -81,7 +74,7 @@ export class LumpsumCalculatorComponent implements AfterViewInit{
     this.investedAmount = Math.round(this.lumpsumInvestment).toLocaleString('en-IN')
     this.totalReturnsOnMaturity = Math.round(this.totalReturnsOnMaturity).toLocaleString('en-IN');
 
-    
+    this.updateChart()
 
   }
 

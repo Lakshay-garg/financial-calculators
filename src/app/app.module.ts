@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { SipCalculatorComponent } from './sip-calculator/sip-calculator.component';
 import { LumpsumCalculatorComponent } from './lumpsum-calculator/lumpsum-calculator.component';
 import { FormsModule } from '@angular/forms';
+import { SwpCalculatorComponent } from './swp-calculator/swp-calculator.component';
+import { NpsCalculatorComponent } from './nps-calculator/nps-calculator.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SipCalculatorComponent,
-    LumpsumCalculatorComponent
+    LumpsumCalculatorComponent,
+    SwpCalculatorComponent,
+    NpsCalculatorComponent
   ],
   imports: [
     BrowserModule,

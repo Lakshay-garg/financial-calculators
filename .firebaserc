@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "financial-calculators-59aac"
-  }
+    "default": "financials-calculator",
+    "main": "financials-calculator"
+  },
+  "targets": {},
+  "etags": {}
 }
